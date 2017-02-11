@@ -32,7 +32,7 @@ This will run `buster` in a container and update the files in the `static`
 folder. The data still remains locally on your disk.
 
 ```bash
-docker-compose run generate
+docker-compose run buster
 ```
 
 ## Preview static files locally
