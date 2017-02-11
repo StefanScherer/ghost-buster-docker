@@ -7,3 +7,26 @@ services:
       - ./content:/var/lib/ghost
     ports:
       - 2368:2368
+
+  generate:
+    image: stefanscherer/buster
+    command: /buster.sh
+    volumes:
+      - ./static:/static
+      - ./buster.sh:/buster.sh
+
+  preview:
+    image: nginx
+    volumes:
+      - ./static:/usr/share/nginx/html:ro
+    ports:
+      - 2369:80
+
+  deploy:
+    image: stefanscherer/buster
+    command: /buster.sh -deploy
+    volumes:
+      - ./static:/static
+      - ./buster.sh:/buster.sh
+      - ~/.ssh:/root/.ssh:ro
+      - ~/.gitconfig:/root/.gitconfig:ro

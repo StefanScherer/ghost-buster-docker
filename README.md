@@ -1,24 +1,50 @@
-# ghost-docker
+# ghost-buster-docker
 
-Run your Ghost blog in a Docker container and publish it with Buster to GitHub pages.
+Run your Ghost blog in a Docker container and publish it with Buster to static
+GitHub pages.
 
-## Edit locally
+## Edit content with Ghost
 
 ```bash
-docker-compose up -d
+docker-compose up -d ghost
 open http://localhost:2368/ghost
 ```
 
-## View locally
+You can publish new content, they are still only locally available.
+
+## View content locally
+
+View the local Ghost site in your Browser
 
 ```bash
 open http://localhost:2368
 ```
 
-## Deploy to GitHub pages
+## Generate static files
+
+This will run `buster` in a container and update the files in the `static`
+folder. The data still remains locally on your disk.
 
 ```bash
-./deploy.sh
+docker-compose run generate
+```
+
+## Preview static files locally
+
+If you want to preview the generated static pages, use another container.
+
+```bash
+docker-compose up -d preview
+open http://localhost:2369
+```
+
+## Deploy static files to GitHub pages
+
+To deploy the static files also Buster is used to create the static files
+and deploy/push all files to GitHub pages.
+
+```bash
+docker-compose run deploy
 ```
 
 ## Customization
@@ -37,8 +63,8 @@ cd ../..
 
 ### Disqus
 
-Followed http://academy.ghost.org/adding-disqus-to-your-ghost-blog/ to add Disqus to
-`post.hbs` and then copied it into the themes folder.
+Followed http://academy.ghost.org/adding-disqus-to-your-ghost-blog/ to add
+Disqus to `post.hbs` and then copied it into the themes folder.
 
 ```bash
 cp post.hbs content/themes/casper/post.hbs
