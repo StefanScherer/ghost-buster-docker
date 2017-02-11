@@ -40,11 +40,12 @@ open http://localhost:2369
 
 ## Deploy static files to GitHub pages
 
-To deploy the static files also Buster is used to create the static files
-and deploy/push all files to GitHub pages.
+To deploy the static files the shell script `deploy.sh` is used that checks
+in all local changes in the `static` folder and pushes it as new Git commit
+to your GitHub pages repo.
 
 ```bash
-docker-compose run deploy
+./deploy.sh
 ```
 
 ## Customization
