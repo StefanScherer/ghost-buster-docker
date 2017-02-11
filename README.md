@@ -44,4 +44,11 @@ Followed http://academy.ghost.org/adding-disqus-to-your-ghost-blog/ to add Disqu
 cp post.hbs content/themes/casper/post.hbs
 ```
 
+### Clone GitHub pages
 
+Put your GitHub pages into a folder `static`.
+
+```bash
+git clone git@github.com:StefanScherer/stefanscherer.github.io
+mv stefanscherer.github.io static
+```
