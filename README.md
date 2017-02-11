@@ -10,7 +10,13 @@ docker-compose up -d ghost
 open http://localhost:2368/ghost
 ```
 
-You can publish new content, they are still only locally available.
+or
+
+```bash
+./edit.sh
+```
+
+You can create and publish new content, they are still only locally available.
 
 ## View content locally
 
@@ -38,6 +44,12 @@ docker-compose up -d preview
 open http://localhost:2369
 ```
 
+or
+
+```bash
+./preview.sh
+```
+
 ## Deploy static files to GitHub pages
 
 To deploy the static files the shell script `deploy.sh` is used that checks
@@ -49,6 +61,8 @@ to your GitHub pages repo.
 ```
 
 ## Customization
+
+Some notes for me so I can look up what I have done "years" ago.
 
 ### Casper Theme
 
