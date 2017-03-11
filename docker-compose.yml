@@ -2,7 +2,7 @@ version: '2.1'
 
 services:
   ghost:
-    image: ghost:0.11.4
+    image: ghost:0.11.7
     volumes:
       - ./content:/var/lib/ghost
     ports:
