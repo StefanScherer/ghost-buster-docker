@@ -6,6 +6,7 @@ curl -o static/rss/index.html http://ghost:2368/rss/
 echo "Fixing links to https"
 find static -name *.html -type f -exec sed -i -e 's#http://localhost:2368#https://stefanscherer.github.io#g' {} \;
 find static -name *.html -type f -exec sed -i -e 's#http://fonts.googleapis.com#https://fonts.googleapis.com#' {} \;
+find static -name *.html -type f -exec sed -i -e 's#http://code.jquery.com#https://code.jquery.com#' {} \;
 
 echo "Fixing some blog posts"
 find static -name *.html -type f -exec sed -i -e 's#open https://stefanscherer.github.io#open http://localhost:2368#g' {} \;
