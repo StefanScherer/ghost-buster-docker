@@ -2,9 +2,9 @@ version: '2.1'
 
 services:
   ghost:
-    image: ghost:0.11.11
+    image: ghost:1.5.0
     volumes:
-      - ./content:/var/lib/ghost
+      - ./content:/var/lib/ghost/content
     ports:
       - 2368:2368
 
