@@ -9,7 +9,7 @@ services:
       - 2368:2368
 
   buster:
-    image: stefanscherer/buster
+    image: stefanscherer/buster:20180115
     command: /buster.sh
     volumes:
       - ./static:/static
